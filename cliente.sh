@@ -20,7 +20,9 @@ fi
 
 echo "(5) send"
 
-echo "FILE_NAME vaca.vaca" | nc $SERVER_AD $PORT 
+FILE_NAME="vaca.vaca"
+
+echo "FILE_NAME $FILE_NAME" | nc $SERVER_AD $PORT 
 
 echo "(6) LISENT and check file_name"
 MSG=`nc -l $PORT`
@@ -32,5 +34,6 @@ then
 	echo "ERROR 2: file_name incorrect"
 	exit 2
 fi
-
+echo "(9)send datos de vaca"
+cat vacas/$FILE_NAME | nc $SERVER_AD $PORT
 exit 0

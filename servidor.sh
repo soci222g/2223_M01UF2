@@ -35,5 +35,7 @@ then
 fi
 	echo "OK_FILE_NAME" | nc $IP_CLIENT $PORT
 
+	echo "(8) LISENT"
+nc -l $PORT > /home/enti/proyectos/2223_M01UF2/indox/$FILE_NAME
 
 exit 0
